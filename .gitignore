@@ -1,0 +1,14 @@
+Procodingskills_Site/.eslintignore
+Procodingskills_Site/.forceignore
+Procodingskills_Site/.gitignore
+Procodingskills_Site/.prettierignore
+Procodingskills_Site/.prettierrc
+Procodingskills_Site/package.json
+Procodingskills_Site/README.md
+Procodingskills_Site/.vscode/extensions.json
+Procodingskills_Site/sfdx-project.json
+Procodingskills_Site/.vscode/launch.json
+Procodingskills_Site/force-app/main/default/aura/.eslintrc.json
+Procodingskills_Site/force-app/main/default/lwc/.eslintrc.json
+Procodingskills_Site/config/project-scratch-def.json
+Procodingskills_Site/.vscode/settings.json
