@@ -2,7 +2,7 @@
   @description       : 
   @author            : i.lakshmideepak@gmail.com
   @group             : 
-  @last modified on  : 12-17-2020
+  @last modified on  : 12-18-2020
   @last modified by  : i.lakshmideepak@gmail.com
   Modifications Log 
   Ver   Date         Author                      Modification
@@ -12,8 +12,17 @@
   <lightning-card  title="Concept Index">
     <lightning-button label="New Request" slot="actions"></lightning-button>
     <p class="slds-p-horizontal_small">
-      <a onclick={reactiveFields} data-eventname="reactiveFields" data-title="Reactive Fields">1 . Reactive Fields</a>
-    </p>
+      <template  for:each={menuData.data} for:item="item">
+          <p key={item.Id} >
+            <a onclick={reactiveFields}  if:true={item.ILD_Procoding__isActive__c} data-eventname={item.ILD_Procoding__Component_Name__c} data-title={item.Name}>{item.ILD_Procoding__Sort_Order__c}. {item.Name}</a>
+            <lightning-formatted-text if:false={item.ILD_Procoding__isActive__c}>{item.ILD_Procoding__Sort_Order__c}. {item.Name}</lightning-formatted-text>
+          </p>
+         
+      </template>
+      <template if:true={menuData.error}>
+          {menuData.error}
+      </template>
+      </p>
     <p slot="footer">Contact : i.lakshmideepak@gmail.com</p>
 </lightning-card>
 </template>

@@ -1,9 +1,11 @@
 import { LightningElement,wire } from 'lwc';
 import { fireEvent } from 'c/pubsub';
 import { CurrentPageReference } from 'lightning/navigation';
+import getconceptLoads from '@salesforce/apex/ConceptMenuServer.conceptLoads';
 
 export default class ConceptMenu extends LightningElement {
     @wire(CurrentPageReference) pageRef;
+    @wire(getconceptLoads) menuData;
     connectedCallback() {
         let browserURL =  window.location.href;
         let newURL = new URL(browserURL).searchParams;
