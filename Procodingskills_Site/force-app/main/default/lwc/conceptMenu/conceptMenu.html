@@ -15,7 +15,7 @@
       <template  for:each={menuData.data} for:item="item">
           <p key={item.Id} >
             <a onclick={reactiveFields}  if:true={item.ILD_Procoding__isActive__c} data-eventname={item.ILD_Procoding__Component_Name__c} data-title={item.Name}>{item.ILD_Procoding__Sort_Order__c}. {item.Name}</a>
-            <lightning-formatted-text if:false={item.ILD_Procoding__isActive__c}>{item.ILD_Procoding__Sort_Order__c}. {item.Name}</lightning-formatted-text>
+            <span if:false={item.ILD_Procoding__isActive__c} >{item.ILD_Procoding__Sort_Order__c}. {item.Name}</span>
           </p>
          
       </template>
