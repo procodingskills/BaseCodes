@@ -15,7 +15,7 @@ export default class ConceptLoad extends LightningElement {
     isReactiveFields = false;
     isHTM5DataAttributes = false;
     isFileUpload = false;
-
+    isapexMethodsWire = false;
 
     connectedCallback() {
         registerListener('loadComponents' 
@@ -42,12 +42,16 @@ export default class ConceptLoad extends LightningElement {
     else if(loadName == "fileUpload"){
         this.isFileUpload = true;
     }
+    else if(loadName == "apexMethodsWire"){
+        this.isapexMethodsWire = true;
+    }
  }
   resetDetails(){
       this.relativeurl = '';
       this.isReactiveFields = false;
       this.isHTM5DataAttributes = false;
       this.isFileUpload = false;
+      this.isapexMethodsWire = false;
   }
 
 }
