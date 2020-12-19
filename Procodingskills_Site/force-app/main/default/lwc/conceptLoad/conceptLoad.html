@@ -12,9 +12,9 @@
     <lightning-card  title={componentName}>
         <c-reactive-fields if:true={isReactiveFields}></c-reactive-fields>
         <c-html5-data-attributes if:true={isHTM5DataAttributes}></c-html5-data-attributes>
-
+        <c-file-upload if:true={isFileUpload}>check our blog for more concepts</c-file-upload>
         <p slot="footer"> 
-          <c-view-source source="reactive-fields-lwc/" slot="footer" if:true={componentName}>
+          <c-view-source source={relativeurl} slot="footer" if:true={componentName}>
           To know more please follow procodingskills.com
          </c-view-source>
         </p>

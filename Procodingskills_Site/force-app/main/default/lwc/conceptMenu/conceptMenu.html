@@ -14,7 +14,7 @@
     <p class="slds-p-horizontal_small">
       <template  for:each={menuData.data} for:item="item">
           <p key={item.Id} >
-            <a onclick={reactiveFields}  if:true={item.ILD_Procoding__isActive__c} data-eventname={item.ILD_Procoding__Component_Name__c} data-title={item.Name}>{item.ILD_Procoding__Sort_Order__c}. {item.Name}</a>
+            <a onclick={reactiveFields}  if:true={item.ILD_Procoding__isActive__c} data-relativeurl={item.ILD_Procoding__Relative_Post_URL__c} data-eventname={item.ILD_Procoding__Component_Name__c} data-title={item.Name}>{item.ILD_Procoding__Sort_Order__c}. {item.Name}</a>
             <span if:false={item.ILD_Procoding__isActive__c} >{item.ILD_Procoding__Sort_Order__c}. {item.Name}</span>
           </p>
          
