@@ -2,7 +2,7 @@
   @description       : 
   @author            : i.lakshmideepak@gmail.com
   @group             : 
-  @last modified on  : 12-17-2020
+  @last modified on  : 12-18-2020
   @last modified by  : i.lakshmideepak@gmail.com
   Modifications Log 
   Ver   Date         Author                      Modification
@@ -11,5 +11,18 @@
 <template>
     <lightning-card  title={componentName}>
         <c-reactive-fields if:true={isReactiveFields}></c-reactive-fields>
+        <c-html5-data-attributes if:true={isHTM5DataAttributes}></c-html5-data-attributes>
+        <c-file-upload if:true={isFileUpload}>check our blog for more concepts</c-file-upload>
+        <p slot="footer"> 
+          <c-view-source source={relativeurl} slot="footer" if:true={componentName}>
+          To know more please follow procodingskills.com
+         </c-view-source>
+        </p>
+
+        <p if:false={componentName}>
+            <strong> We are happy to help you, please select the options from avilable Index on left else submit your new request with us. we will get added that to our list</strong>
+        </p>
     </lightning-card>
+
+   
 </template>
