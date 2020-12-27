@@ -17,6 +17,7 @@ export default class ConceptLoad extends LightningElement {
     isFileUpload = false;
     isapexMethodsWire = false;
     isapexWireFunction = false;
+    isapexMethodImperatively = false;
 
     connectedCallback() {
         registerListener('loadComponents' 
@@ -48,6 +49,9 @@ export default class ConceptLoad extends LightningElement {
     else if(loadName =="apexWireFunction"){
         this.isapexWireFunction = true;
     }
+    else if(loadName == "apexMethodImperatively"){
+        this.isapexMethodImperatively = true;
+    }
  }
   resetDetails(){
       this.relativeurl = '';
@@ -57,6 +61,7 @@ export default class ConceptLoad extends LightningElement {
       this.isFileUpload = false;
       this.isapexMethodsWire = false;
       this.isapexWireFunction = false;
+      this.isapexMethodImperatively = false;
   }
 
 }

@@ -1,0 +1,50 @@
+<!--
+  @description       : 
+  @author            : i.lakshmideepak@gmail.com
+  @group             : 
+  @last modified on  : 12-19-2020
+  @last modified by  : i.lakshmideepak@gmail.com
+  Modifications Log 
+  Ver   Date         Author                      Modification
+  1.0   12-19-2020   i.lakshmideepak@gmail.com   Initial Version
+-->
+<template>
+    <lightning-card title="List of Accounts">
+        <lightning-button label="Load Accounts with Apex Imperatively" slot="actions" variant="brand" onclick={loadAccounts}></lightning-button>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" if:true={accounts}>
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Name">Name</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Phone">Phone</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Parent Account">Parent Account</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={accounts} for:item="account">
+                <tr class="slds-hint-parent" key={account.Id}>
+                    <th data-label="Opportunity Name" scope="row">
+                        <div class="slds-truncate" title="Cloudhub">
+                            <a href="javascript:void(0);" tabindex="-1">{account.Name}</a>
+                        </div>
+                    </th>
+                    <td data-label="Account Name">
+                        <div class="slds-truncate" title="Phone">{account.Phone}</div>
+                    </td>
+                    <td data-label="Close Date">
+                        <div class="slds-truncate" title="Parent Account">{account.Parent.Name}</div>
+                    </td>
+                </tr>
+            </template>
+            </tbody>
+        </table>
+        <div if:true={error} style="color:red;">
+            {error}
+        </div>
+    </lightning-card>
+</template>
